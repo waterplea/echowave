@@ -1,0 +1,32 @@
+<tui-hosted-dropdown
+  tuiDropdownAlign="right"
+  [content]="dropdown"
+  [(open)]="open"
+>
+  <button
+    tuiIconButton
+    appearance="icon"
+    icon="tuiIconUserLarge"
+    shape="rounded"
+    size="m"
+    title="User menu"
+  ></button>
+</tui-hosted-dropdown>
+<ng-template #dropdown>
+  <tui-data-list>
+    <button tuiOption (click)="toggle()">
+      <tui-svg class="icon" src="tuiIconMoonLarge"></tui-svg>
+      Night mode
+      <tui-toggle
+        class="toggle"
+        [focusable]="false"
+        [(ngModel)]="night"
+      ></tui-toggle>
+    </button>
+    <button tuiOption>
+      <tui-svg class="icon" src="tuiIconLogOutLarge"></tui-svg>
+      Log Out
+    </button>
+  </tui-data-list>
+</ng-template>
+<tui-theme-night *ngIf="night"></tui-theme-night>

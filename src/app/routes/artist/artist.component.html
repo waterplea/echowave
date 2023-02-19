@@ -1,0 +1,34 @@
+<aside class="sidebar">
+  <img
+    src="https://f4.bcbits.com/img/a0405229176_16.jpg"
+    alt=""
+    class="cover"
+  />
+  <strong class="album">Rudimentary Oscillations</strong>
+  <div class="artist">by Waterplea</div>
+  <p>© 2013 Waterplea</p>
+</aside>
+<ng-container *tuiLet="queue.paused$ | async as paused">
+  <section *tuiLet="queue.current$ | async as current" class="tracklist">
+    <div
+      *ngFor="let item of tracks; let index = index"
+      class="track"
+      [class.track_current]="item === current"
+    >
+      <div class="control">
+        <div class="number">{{ index + 1 }}</div>
+        <button
+          tuiIconButton
+          appearance="icon"
+          size="s"
+          title="Play"
+          class="play"
+          [icon]="item === current && !paused ? 'tuiIconPause' : 'tuiIconPlay'"
+          (click)="paused ? onPlay(index) : queue.pause()"
+        ></button>
+      </div>
+      <div class="title">{{ item.title }}</div>
+      <div class="duration">{{ item.duration }}</div>
+    </div>
+  </section>
+</ng-container>

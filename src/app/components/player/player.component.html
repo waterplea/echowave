@@ -1,0 +1,87 @@
+<audio *ngIf="queue.next$ | async as next" [src]="next.url"></audio>
+<ng-container *tuiLet="queue.current$ | async as current">
+  <audio
+    #audio
+    tuiMedia
+    [volume]="volume"
+    [src]="current?.url"
+    [paused]="!!(queue.paused$ | async)"
+    [(currentTime)]="currentTime"
+    (ended)="queue.next()"
+  ></audio>
+  <div class="section">
+    <tui-avatar
+      [avatarUrl]="current?.cover || null"
+      size="l"
+      class="cover"
+    ></tui-avatar>
+    <label [tuiLabel]="current?.artist">{{ current?.title }}</label>
+  </div>
+  <div *tuiLet="queue.paused$ | async as paused" class="player">
+    <div class="buttons">
+      <button
+        tuiIconButton
+        appearance="icon"
+        size="s"
+        icon="tuiIconShuffle"
+        [disabled]="true"
+      ></button>
+      <button
+        tuiIconButton
+        appearance="icon"
+        size="s"
+        icon="tuiIconSkipBack"
+        [disabled]="!current"
+        (click)="queue.prev()"
+      ></button>
+      <button
+        tuiIconButton
+        appearance="icon"
+        size="s"
+        [disabled]="!current"
+        [icon]="paused ? 'tuiIconPlayLarge' : 'tuiIconPauseLarge'"
+        (click)="paused ? queue.play() : queue.pause()"
+      ></button>
+      <button
+        tuiIconButton
+        appearance="icon"
+        size="s"
+        icon="tuiIconSkipForward"
+        [disabled]="!current"
+        (click)="queue.next()"
+      ></button>
+      <button
+        tuiIconButton
+        appearance="icon"
+        size="s"
+        icon="tuiIconHeart"
+        [disabled]="true"
+      ></button>
+    </div>
+    <input
+      type="range"
+      class="input"
+      tuiSlider
+      [disabled]="!current"
+      [(ngModel)]="currentTime"
+      [max]="audio.duration || 100"
+    />
+  </div>
+  <div class="section">
+    <button
+      tuiIconButton
+      appearance="icon"
+      size="s"
+      icon="tuiIconVolume2"
+      class="mute"
+    ></button>
+    <input
+      type="range"
+      class="volume"
+      step="0.01"
+      tuiSlider
+      [(ngModel)]="volume"
+      [max]="1"
+    />
+  </div>
+</ng-container>

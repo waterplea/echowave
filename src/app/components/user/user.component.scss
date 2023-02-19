@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  color: var(--tui-text-03);
+}
+
+.toggle {
+  margin-left: 1rem;
+  pointer-events: none;
+}

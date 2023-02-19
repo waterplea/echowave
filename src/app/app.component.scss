@@ -1,0 +1,58 @@
+:host {
+  display: block;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  background: var(--tui-base-01);
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+.logo {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.search {
+  margin: 0 auto 0 4rem;
+}
+
+.main {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 7rem 2rem 9rem 18rem;
+  background: var(--tui-base-01);
+}
+
+.navigation {
+  position: fixed;
+  width: 16rem;
+  top: 5rem;
+  left: 0;
+  bottom: 7rem;
+  box-sizing: border-box;
+  background: var(--tui-base-03);
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 7rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  background: var(--tui-base-02);
+}

@@ -1,0 +1,80 @@
+:host {
+  display: flex;
+}
+
+.cover {
+  display: block;
+  width: 16rem;
+  margin-bottom: 1rem;
+}
+
+.album {
+  font-size: 1.2rem;
+}
+
+.artist {
+  color: var(--tui-text-02);
+}
+
+.tracklist {
+  flex: 1;
+  padding: 0 1rem;
+}
+
+.play {
+  display: none;
+}
+
+.track {
+  display: flex;
+  height: 2rem;
+  border-radius: var(--tui-radius-s);
+  padding: 0 0.5rem;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  transition: background 0.2s;
+
+  &_current {
+    font-weight: bold;
+    color: var(--tui-primary);
+
+    .number {
+      display: none;
+    }
+
+    .play {
+      display: block;
+
+      ::ng-deep .t-wrapper {
+        color: var(--tui-primary);
+        opacity: 1;
+
+        tui-svg {
+          fill: var(--tui-primary);
+        }
+      }
+    ;
+    }
+  }
+
+  &:hover {
+    background: var(--tui-base-02);
+
+    .number {
+      display: none;
+    }
+
+    .play {
+      display: block;
+    }
+  }
+}
+
+.control {
+  width: 2rem;
+  text-align: center;
+}
+
+.title {
+  flex: 1;
+}

@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  flex: 1
+}
+
+.cover {
+  margin-right: 1rem;
+}
+
+.player {
+  flex: 1;
+}
+
+.buttons {
+  appearance: none;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  margin: 0;
+}
+
+.mute {
+  margin: 0 0.5rem 0 auto;
+}
+
+.volume {
+  margin: 0;
+  width: 5rem
+}

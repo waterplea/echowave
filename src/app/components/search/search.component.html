@@ -1,0 +1,32 @@
+<tui-input
+  tuiTextfieldIconLeft="tuiIconSearch"
+  tuiTextfieldSize="m"
+  class="search"
+  [(ngModel)]="value"
+>
+  Search for artists, albums, playlists or songs
+  <tui-data-list *tuiDataList>
+    <tui-opt-group label="Artists">
+      <a tuiOption routerLink="/artist/waterplea">
+        <tui-avatar
+          size="s"
+          avatarUrl="https://f4.bcbits.com/img/0000241196_21.jpg"
+          text="Waterplea"
+          class="avatar"
+        ></tui-avatar>
+        Waterplea
+      </a>
+    </tui-opt-group>
+    <tui-opt-group label="Albums">
+      <a tuiOption routerLink="/artist/waterplea">
+        <tui-avatar
+          size="s"
+          avatarUrl="https://f4.bcbits.com/img/a0405229176_16.jpg"
+          text="Rudimentary Oscillation"
+          class="avatar"
+        ></tui-avatar>
+        Waterplea — Rudimentary Oscillation
+      </a>
+    </tui-opt-group>
+  </tui-data-list>
+</tui-input>
