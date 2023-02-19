@@ -18,6 +18,10 @@ export class UserComponent {
 
   night = this.localStorage.getItem(KEY) === 'true';
 
+  constructor() {
+    this.documentRef.body.classList.toggle('_night', this.night);
+  }
+
   toggle() {
     this.night = !this.night;
     this.localStorage.setItem(KEY, String(this.night));
