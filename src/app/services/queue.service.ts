@@ -26,13 +26,10 @@ export class QueueService {
 
   play(index: number = this.index) {
     this.paused$.next(true);
-
-    setTimeout(() => {
-      this.index = index;
-      this.current$.next(this.list$.value[index]);
-      this.next$.next(this.list$.value[(index + 1) % this.list$.value.length]);
-      this.paused$.next(false);
-    });
+    this.index = index;
+    this.current$.next(this.list$.value[index]);
+    this.next$.next(this.list$.value[(index + 1) % this.list$.value.length]);
+    this.paused$.next(false);
   }
 
   pause() {

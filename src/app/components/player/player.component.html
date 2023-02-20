@@ -5,7 +5,7 @@
     tuiMedia
     [volume]="volume"
     [src]="current?.url"
-    [paused]="!!(queue.paused$ | async)"
+    [paused]="!!(paused$ | async)"
     [(currentTime)]="currentTime"
     (ended)="queue.next()"
   ></audio>
