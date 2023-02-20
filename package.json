@@ -17,10 +17,10 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
-    "@taiga-ui/cdk": "3.17.0-dev.main-8616173",
-    "@taiga-ui/core": "3.17.0-dev.main-8616173",
-    "@taiga-ui/icons": "3.17.0-dev.main-8616173",
-    "@taiga-ui/kit": "3.17.0-dev.main-8616173",
+    "@taiga-ui/cdk": "3.18.0",
+    "@taiga-ui/core": "3.18.0",
+    "@taiga-ui/icons": "3.18.0",
+    "@taiga-ui/kit": "3.18.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -29,6 +29,7 @@
     "@angular-devkit/build-angular": "^15.1.5",
     "@angular/cli": "~15.1.5",
     "@angular/compiler-cli": "^15.1.0",
+    "angular-cli-ghpages": "^1.0.5",
     "prettier": "latest",
     "typescript": "~4.9.4"
   }

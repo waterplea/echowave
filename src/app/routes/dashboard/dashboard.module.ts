@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TuiAvatarModule } from '@taiga-ui/kit';
 
 import { DashboardComponent } from './dashboard.component';
-import {TuiAvatarModule} from "@taiga-ui/kit";
 
 const ROUTES: Routes = [
   {
@@ -12,7 +12,7 @@ const ROUTES: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(ROUTES), TuiAvatarModule],
+  imports: [RouterModule.forChild(ROUTES), TuiAvatarModule],
   declarations: [DashboardComponent],
   exports: [DashboardComponent],
 })
